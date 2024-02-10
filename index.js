@@ -22,9 +22,9 @@ function getPlayerChoice() {
   const playerChoice = prompt(
     "Choose your weapon! Rock🪨, Paper📜, or Scissors✂️?"
   )
-  
+
   if (playerChoice === null) return null
-  
+
   const playerChoiceLowerCase = playerChoice.toLowerCase().trim()
   if (playerChoice === "") {
     return "empty"
@@ -68,16 +68,19 @@ function game() {
     let round = i + 1
     const playerSelection = getPlayerChoice()
     const computerSelection = getComputerChoice()
-    
-    if (playerSelection === null) return "You have exited the game. Type game() in the console to start again."
-    
+
+    if (playerSelection === null)
+      return "You have exited the game. Type game() in the console to start again."
+
     if (playerSelection === "empty") {
       console.log(
-        "Please type Rock, Paper, or Scissors in the prompt input!Let's start from round 0"
+        "Seems you didn't typed anything in the input field! Please type 'Rock', 'Paper', or 'Scissors' in the prompt input!"
       )
       i--
     } else if (playerSelection === "wrongString") {
-      console.log("Please type Rock, Paper, or Scissors in the prompt input!")
+      console.log(
+        "Seems you didn't typed the right word! Please type 'Rock', 'Paper', or 'Scissors' in the prompt input!"
+      )
       i--
     } else {
       console.log(

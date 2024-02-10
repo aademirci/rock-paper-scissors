@@ -22,6 +22,9 @@ function getPlayerChoice() {
   const playerChoice = prompt(
     "Choose your weapon! Rock🪨, Paper📜, or Scissors✂️?"
   )
+  
+  if (playerChoice === null) return null
+  
   const playerChoiceLowerCase = playerChoice.toLowerCase().trim()
   if (playerChoice === "") {
     return "empty"
@@ -65,6 +68,9 @@ function game() {
     let round = i + 1
     const playerSelection = getPlayerChoice()
     const computerSelection = getComputerChoice()
+    
+    if (playerSelection === null) return "You have exited the game. Type game() in the console to start again."
+    
     if (playerSelection === "empty") {
       console.log(
         "Please type Rock, Paper, or Scissors in the prompt input!Let's start from round 0"
@@ -89,7 +95,7 @@ function game() {
   } else {
     console.log("We Have a Tie!")
   }
-  console.log(`-> Score:  YOU:${playerScore}   COMPUTER:${computerScore}`)
+  console.log(`-> Score:  YOU: ${playerScore}   COMPUTER: ${computerScore}`)
   return "Type another game() to start a new game."
 }
 
